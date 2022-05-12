@@ -3,7 +3,6 @@ package project.com.whacamole.GameEngine;
 import javafx.animation.PauseTransition;
 import javafx.scene.Group;
 import javafx.scene.SubScene;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.*;
 import javafx.scene.text.Text;
 import javafx.util.Duration;

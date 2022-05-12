@@ -1,20 +1,13 @@
 package project.com.whacamole.GameEngine;
 
-import javafx.animation.FadeTransition;
 import javafx.animation.ParallelTransition;
 import javafx.animation.PathTransition;
-import javafx.animation.ScaleTransition;
 import javafx.scene.Node;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.LineTo;
 import javafx.scene.shape.MoveTo;
 import javafx.scene.shape.Path;
-import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 
-import java.io.File;
 
 public class Mole extends Object{
     private boolean life = false;
