@@ -48,8 +48,8 @@ public class Game {
                 floor = new Floor(
                         widthObject * i,
                         heightObject * j,
-                        widthObject,
-                        heightObject,
+                        widthObject + 10,
+                        heightObject + 10,
                         ScrObject.floorPath
                 );
 
