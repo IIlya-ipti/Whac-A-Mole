@@ -21,10 +21,6 @@ interface ScrObject{
 public class Game {
     private final Grid gridObjects; // hash table for game
     private final Group groupOfObjects;  // group for javafx
-    private final double windowX;
-    private final double windowY;
-    private final int widthObject; // width of objects
-    private final int heightObject; // height of objects
     private int playerScore = 0;
     private Text textScore = null; // text field of score
     private int randIndex;
@@ -34,15 +30,15 @@ public class Game {
         this.textScore = userScore;
     }
     public Game(double windowX, double windowY){
-        this.windowX = windowX;
-        this.windowY = windowY;
-        widthObject = (int)windowX/GameConst.countW;
-        heightObject = (int)windowY/GameConst.countH;
+        // width of objects
+        int widthObject = (int) windowX / GameConst.countW;
+        // height of objects
+        int heightObject = (int) windowY / GameConst.countH;
 
 
 
         groupOfObjects = new Group();
-        gridObjects = new Grid(GameConst.countH,GameConst.countW,widthObject,heightObject);
+        gridObjects = new Grid(GameConst.countH,GameConst.countW, widthObject, heightObject);
 
 
         // init all objects
@@ -62,7 +58,7 @@ public class Game {
                 Rectangle rc = new Rectangle(
                         widthObject * i,
                         heightObject * j,
-                        widthObject ,
+                        widthObject,
                         heightObject);
 
                 mole = new Mole(
@@ -90,7 +86,6 @@ public class Game {
     * method for start this game
     * */
     public void RunGame(SubScene scene){
-        //Scene scene = new Scene(groupOfObjects,w,GameConst.windowY);
         scene.setRoot(groupOfObjects);
         scene.setOnMousePressed(keyEvent -> {
             Object obj = gridObjects.getGridObjectCord((int)keyEvent.getX(),(int)keyEvent.getY());

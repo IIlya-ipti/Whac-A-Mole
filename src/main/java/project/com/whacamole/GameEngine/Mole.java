@@ -52,11 +52,11 @@ public class Mole extends Object{
 
         pathTransition1.setNode(getRecTexture());
         pathTransition1.setPath(path1);
-        pathTransition1.setDuration(Duration.seconds(0.1));
+        pathTransition1.setDuration(Duration.seconds(0.3));
 
         pathTransition2.setNode(Clip);
         pathTransition2.setPath(path2);
-        pathTransition2.setDuration(Duration.seconds(0.1));
+        pathTransition2.setDuration(Duration.seconds(0.3));
 
         ParallelTransition parallelTransition = new ParallelTransition(pathTransition1,pathTransition2);
         parallelTransition.play();

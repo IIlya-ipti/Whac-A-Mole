@@ -45,7 +45,6 @@ public class StartControl {
         FXMLLoader fxmlLoader = new FXMLLoader(GameControl.class.getResource("game_template.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setScene(scene);
-        stage.setTitle("WOW!");
     }
 
     public Text getBestScore() {

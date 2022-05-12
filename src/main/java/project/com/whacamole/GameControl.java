@@ -59,13 +59,12 @@ public class GameControl implements Initializable {
         startControl.getBestScore().setText("Best score : " + bestScore);
 
         stage.setScene(scene);
-        stage.setTitle("AAA!");
     }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        final int SECOND_OF_GAME = 5;
+        final int SECOND_OF_GAME = 30;
 
 
         AtomicInteger second = new AtomicInteger(SECOND_OF_GAME);
