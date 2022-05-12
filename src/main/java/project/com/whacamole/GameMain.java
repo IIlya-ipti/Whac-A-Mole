@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import java.io.File;
 import java.io.IOException;
 
-public class GameApp extends Application {
+public class GameMain extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         stage.setResizable(false);
