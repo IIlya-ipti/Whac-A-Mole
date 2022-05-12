@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="jpackage" name="Whac-A-Mole">
+    <output-path>$PROJECT_DIR$/out/artifacts/Whac_A_Mole</output-path>
+    <properties id="jpackage-properties">
+      <options>
+        <option name="version" value="" />
+        <option name="copyright" value="" />
+        <option name="description" value="" />
+        <option name="vendor" value="" />
+        <option name="mainClass" value="project.com.whacamole.GameApp" />
+      </options>
+    </properties>
+    <root id="root">
+      <element id="archive" name="Whac_A_Mole.jar">
+        <element id="module-output" name="Whac-A-Mole" />
+      </element>
+    </root>
+  </artifact>
+</component>
