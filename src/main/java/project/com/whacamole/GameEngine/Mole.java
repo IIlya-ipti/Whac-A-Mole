@@ -17,8 +17,11 @@ public class Mole extends Object{
         super(X0, Y0, width, height, UrlTexture);
 
     }
-    private void move(double setPosY){
 
+    /*
+    * Move mole and his rectangle clip (down or up)
+    * */
+    private void move(double setPosY){
         double xCenter = getRecTexture().getX() + getRecTexture().getTranslateX() + getRecTexture().getWidth()/2;
         double yCenter = getRecTexture().getY() + getRecTexture().getTranslateY() + getRecTexture().getHeight()/2;
 

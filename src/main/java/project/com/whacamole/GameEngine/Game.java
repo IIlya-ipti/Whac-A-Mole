@@ -14,7 +14,7 @@ interface GameConst{
 
 interface ScrObject{
     String molePath = "src/main/resources/project/com/whacamole/Mole.png";
-    String floorPath = "src/main/resources/project/com/whacamole/floor.png";
+    String floorPath = "src/main/resources/project/com/whacamole/froor_green.png";
 }
 
 public class Game {
@@ -54,7 +54,7 @@ public class Game {
                 );
 
                 // this rectangle for Clip
-                Rectangle rc = new Rectangle(
+                Rectangle clipMole = new Rectangle(
                         widthObject * i,
                         heightObject * j,
                         widthObject,
@@ -68,7 +68,7 @@ public class Game {
                         ScrObject.molePath
                 );
 
-                mole.getRecTexture().setClip(rc);
+                mole.getRecTexture().setClip(clipMole);
                 gridObjects.setGridObject(i,j,mole);
                 groupOfObjects.getChildren().add(mole.getRecTexture());
                 groupOfObjects.getChildren().add(floor.getRecTexture());
@@ -109,7 +109,7 @@ public class Game {
         randIndex = randValue;
         gridObjects.getGridObject(randValue).launchObject();
 
-        PauseTransition delay = new PauseTransition(Duration.seconds(0.6));
+        PauseTransition delay = new PauseTransition(Duration.seconds(0.5));
         delay.setOnFinished(
                 event -> {
                 Object object = gridObjects.getGridObject(randIndex);

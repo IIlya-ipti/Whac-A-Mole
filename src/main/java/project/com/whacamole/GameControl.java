@@ -26,9 +26,6 @@ public class GameControl implements Initializable {
     private static int bestScore = 0;
     private  Timeline  stopWatchTimeline;
 
-    @FXML // fx:id="Pause"
-    private Button Pause; // Value injected by FXMLLoader
-
     @FXML // fx:id="sceneGame"
     private SubScene sceneGame; // Value injected by FXMLLoader
 
@@ -41,15 +38,18 @@ public class GameControl implements Initializable {
     @FXML
     private Text Score;
 
-    @FXML
-    void PauseAction(ActionEvent event) throws IOException {
+
+    /*
+    * End the game
+    * */
+    private void End() throws IOException {
         stopWatchTimeline.stop();
 
         // init new best score
         bestScore = Math.max(bestScore,thisGame.getPlayerScore());
 
         // init page
-        Stage stage = (Stage) Pause.getScene().getWindow();
+        Stage stage = (Stage) sceneGame.getScene().getWindow();
         FXMLLoader fxmlLoader = new FXMLLoader(StartControl.class.getResource("end_template.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         StartControl startControl = fxmlLoader.getController();
@@ -67,6 +67,7 @@ public class GameControl implements Initializable {
         final int SECOND_OF_GAME = 30;
 
 
+        // create player score and time fields
         AtomicInteger second = new AtomicInteger(SECOND_OF_GAME);
         TimeField.setText("Time: "+ second + " sec.");
         stopWatchTimeline = new Timeline(new KeyFrame(Duration.seconds(1), (ActionEvent event) -> {
@@ -75,11 +76,16 @@ public class GameControl implements Initializable {
         }));
         stopWatchTimeline.setCycleCount(SECOND_OF_GAME);
         stopWatchTimeline.play();
-
         stopWatchTimeline.setOnFinished(actionEvent -> {
-            Pause.fire();
+            try {
+                End();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         });
 
+
+        // add new game
         thisGame = new Game(sceneGame.getWidth(),sceneGame.getHeight());
         thisGame.RunGame(sceneGame);
         thisGame.setTextScore(ScoreField);

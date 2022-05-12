@@ -15,7 +15,7 @@ public class GameMain extends Application {
         stage.setResizable(false);
         FXMLLoader fxmlLoader = new FXMLLoader(MenuControl.class.getResource("menu_template.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Game!");
+        stage.setTitle("Whack a mole");
         stage.setScene(scene);
 
         // add icon
