@@ -22,7 +22,7 @@ public class Game {
     private final Group groupOfObjects;  // group for javafx
     private int playerScore = 0;
     private Text textScore = null; // text field of score
-    private int randIndex;
+    private int randIndex = -1;
 
 
     public void setTextScore(Text userScore){
